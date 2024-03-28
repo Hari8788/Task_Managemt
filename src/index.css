@@ -1,13 +1,183 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Nunito, sans-serif;
+  background: #f5f6f7;
+}
+
+main {
+  max-width: 30rem;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+main > h1 {
+  text-align: center;
+}
+
+.Add-task {
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.Add-task input {
+  display: block;
+  margin: 1rem auto;
+  width: 20rem;
+  padding: 0.5rem;
+  border: 1px solid #00b8e6;
+  border-radius: 10px;
+  outline: none;
+}
+
+.Add-task button {
+  width: 21rem;
+  padding: 0.7rem;
+  border: 1px solid #00b8e6;
+  background: #00b8e6;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.Add-task button:hover {
+  background: #0093b8;
+}
+
+.Add-task button:disabled {
+  background: #d8d8d8;
+  border: 1px solid #d8d8d8;
+  cursor: not-allowed;
+}
+
+.Task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+}
+.Task-details {
+  width: 50%
+}
+.Task-btns{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Task:not(:last-child) {
+  border-bottom: 2px solid #f5f6f7;
+}
+
+.Task h1 {
+  color: #222;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.Task p {
+  padding-right: 1rem;
+  color: #444;
+}
+.Task button {
+  padding: 0.5rem 0.7rem;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.Task .btn-delete {
+  border: 1px solid #d34b4b;
+  background: #d34b4b;
+}
+.Task .btn-edit {
+  border: 1px solid gray;
+  background: blue;
+}
+.Task .btn-details {
+  border: 1px solid green;
+  background: green;
+}
+.Task .btn-details:hover {
+  background: darkgreen;
+}
+.Task .btn-delete:hover {
+  background: #e06a6a;
+}
+.Task .btn-edit:hover {
+  background: darkblue;
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Container */
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  max-width: 80%;
+}
+
+/* Close Button */
+.close-button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-button:hover {
+  color: #666;
+}
+
+/* Modal Content */
+.modal-content {
+  /* Add your styles for modal content here */
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
